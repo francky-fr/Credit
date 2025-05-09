@@ -1,0 +1,28 @@
+{
+  "marine": {
+    "80": true,
+    "salaire_mois_net": 2616,
+    "nature_mois": 300,
+    "apport": 120000,
+    "contribs_cc": [
+      1592
+    ]
+  },
+  "franck": {
+    "apport": 50000
+  },
+  "maison_ref": {
+    "prix_annonce": 558000
+  },
+  "maison_reelle": {
+    "prix_maison": 630000
+  },
+  "credit": {
+    "années": 25,
+    "taux": 2.99,
+    "assu_par_mois": 50
+  },
+  "foyer": {
+    "cout_hors_credit": 3136
+  }
+}
