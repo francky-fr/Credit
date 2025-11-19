@@ -40,9 +40,23 @@ def get_biens_data():
     data = charger_donnees_calculées(path)
 
     biens = []
-    maison_ref = {'titre': 'Maison Ref'}
-    maison_ref['prix_total'] = data['maison_ref_prix']
-    maison_ref['mensuel_franck'] = data['maison_ref_prix']
+    maison_ref = {
+        'titre': 'Maison de référence',
+        'prix_total': data['maison_ref_prix'],
+        'mensuel_franck': data['contributions'][0]['contrib_mensuelle_totale_franck'],
+        'mensuel_marine': data['contributions'][0]['contrib_mensuelle_totale_marine'],
+    }
+    maison_reelle = {
+        'titre': 'Maison réelle',
+        'prix_total': data['maison_reelle_prix'],
+        'mensuel_franck': data['contributions'][0]['contrib_mensuelle_totale_franck'],
+        'mensuel_marine': data['contributions'][0]['contrib_mensuelle_totale_marine'],
+    }
+    biens = [maison_ref, maison_reelle]
+
+    apport_franck = data['apport_franck']
+    apport_marine = data['apport_marine']
+    duree_annees = 25  # tu peux aussi extraire depuis data['credit']['années'] si tu veux
 
     return biens, apport_franck, apport_marine, duree_annees
 
